@@ -11,39 +11,22 @@ This is a java Matrices project to assist in matrix operations that are common t
 Method | Return Type | Description
 ---------------|-------|--------
 add(double[][] leftMatrix, double[][] rightMatrix) | double[][] | Completes standard matrix addition. Returns deep copy of result. Returns null if matrix dimensions do not match.
-
 add(double[] vector1, double[] vector2) | double[] | Completes standard vector addition. Returns deep copy of result. Returns null if vector dimensions do not match.
-
 add(double scalar, double[][] matrix) | double[][] | Adds scalar value to each cell in matrix and returns deep copy of result.
-
 add(double scalar, double[] vector) | double[] | Adds scalar value to each cell in vector and returns deep copy of result.
-
 column(int col, double[][] matrix) | double[] | Returns column from given matrix as a vector.
-
 deepCopy(double[][] matrix) | double[][] | returns deep copy of matrix.
-
 deepCopy(double[] vector) | double[][] | returns deep copy of vector.
-
 equals(double[][] matrix1, double[][] matrix2) | boolean | Returns true if two matrices are deep copies of each other.
-
 equals(double[] vector1, double[] vector2) | boolean | Returns true if two vectors are deep copies of each other.
-
 firstNonZeroIndex(int startIndex, double[] vector) | int | Returns index of first non-zero value in vector on or past startIndex.
-
 maxIndex(double[] vector) | int | Returns the index of the first occurrence of the maximum value within the vector.
-
 multiply(double[][] leftMatrix, double[][] rightMatrix) | double[][] | Completes standard matrix multiplication. Returns null if leftMatrix column count is not equal to the rightMatrix row count.
-
 multiply(double scalar, double[] vector) | double[] | Multiplies each cell in vector by scalar value and returns deep copy of result.
-
 multiply(double scalar, double[][] matrix) | double[][] | Multiplies each cell in matrix by scalar value and returns deep copy of result.
-
 multiplyPairwise(double[] vector1, double[] vector2) | double[] | Multiplies each cell of vector1 by the corresponding cell of vector2 and returns deep copy of result. Returns null if vector dimensions do not match.
-
 multiplyPairwise(double[][] matrix1, double[][] matrix2) | double[][] | Multiplies each cell of matrix1 by the corresponding cell of matrix2 and returns deep copy of result. Returns null if matrix dimensions do not match.
-
 sum(double[] vector) | double | Returns sum of all elements in the given vector.
-
 sum(int dimension, double[][] matrix) | double[][] | Finds sum of all elements in specified dimension, returns vector of sums as 2D matrix. Dimension of 0 returns sum of all elements in matrix as 2D matrix with 1 column and 1 row. Dimension 1 returns a 2D matrix with a single column and each row specifying the sum of each element in the corresponding row in the matrix. Dimension 2 returns a 2D matrix with a single row and each column specifying the sum of each element in the corresponding column in the matrix. Returns null if matrix dimensions do not match.
 
 
