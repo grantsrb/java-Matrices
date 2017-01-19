@@ -88,9 +88,17 @@ public class MatricesTest{
 
   @Test
   public void deepCopy_returnsDeepCopyOfMatrix_2DdoubleArray(){
-    double[][] matrix = new double[][] {{1,0,2}, {0,-4,0}, {1,100,-6}};
-    double[][] knownCopy = new double[][] {{1,0,2}, {0,-4,0}, {1,100,-6}};
+    double[][] matrix = new double[][] {{1,0,2,5}, {0,-4,0,6}, {1,100,-6,7}};
+    double[][] knownCopy = new double[][] {{1,0,2,5}, {0,-4,0,6}, {1,100,-6,7}};
     double[][] testCopy = Matrices.deepCopy(matrix);
+    assertTrue(Matrices.equals(knownCopy, testCopy));
+  }
+
+  @Test
+  public void deepCopy_returnsDeepCopyOfVector_doubleArray(){
+    double[] vector = new double[] {1,0,2,5};
+    double[] knownCopy = new double[] {1,0,2,5};
+    double[] testCopy = Matrices.deepCopy(vector);
     assertTrue(Matrices.equals(knownCopy, testCopy));
   }
 
@@ -100,6 +108,14 @@ public class MatricesTest{
     double[] knownColumn = new double[] {0,-4,100};
     double[] testColumn = Matrices.column(1,matrix);
     assertTrue(Matrices.equals(knownColumn, testColumn));
+  }
+
+  @Test
+  public void maxIndex_returnsIndexOfMaxValueInVector_int(){
+    double[] vector = new double[] {1,0,2,5};
+    int knownIndex = 3;
+    int testIndex = Matrices.maxIndex(vector);
+    assertEquals(knownIndex, testIndex);
   }
 
 }

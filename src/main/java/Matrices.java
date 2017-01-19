@@ -121,6 +121,7 @@ public class Matrices{
   }
 
   // public static double[][] reducedRowForm(double[][] matrix) {
+  //
   //   for(int col = 0; col < matrix[0].length; col++){
   //     for(int row = 0; row < matrix.length; row++) {
   //       double ratio = matrix[col][]
@@ -128,12 +129,30 @@ public class Matrices{
   //   }
   // }
 
+  public static int maxIndex(double[] vector){
+    int index = 0;
+    for(int i = 1; i < vector.length; i++){
+      if(vector[index] < vector[i]){
+        index = i;
+      }
+    }
+    return index;
+  }
+
   public static double[][] deepCopy(double[][] matrix){
     double[][] copy = new double[matrix.length][matrix[0].length];
     for(int row = 0; row < matrix.length; row++) {
-      for(int col = 0; col < matrix.length; col++) {
+      for(int col = 0; col < matrix[0].length; col++) {
         copy[row][col] = matrix[row][col];
       }
+    }
+    return copy;
+  }
+
+  public static double[] deepCopy(double[] vector){
+    double[] copy = new double[vector.length];
+    for(int i = 0; i < vector.length; i++) {
+      copy[i] = vector[i];
     }
     return copy;
   }

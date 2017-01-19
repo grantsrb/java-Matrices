@@ -12,7 +12,10 @@ Method | Return Type | Description
 ---------------|-------|--------
 add(double[][] leftMatrix, double[][] rightMatrix) | double[][] | Completes standard matrix addition. Returns deep copy of result. Returns null if matrix dimensions do not match.
 add(double scalar, double[][] matrix) | double[][] | Adds scalar value to each cell in matrix and returns deep copy of result.
+deepCopy(double[][] matrix) | double[][] | returns deep copy of matrix.
+deepCopy(double[] vector) | double[][] | returns deep copy of vector.
 equals(double[][] matrix1, double[][] matrix2) | boolean | Returns true if two matrices are deep copies of each other.
+equals(double[] vector1, double[] vector2) | boolean | Returns true if two vectors are deep copies of each other.
 multiplyMatrix(double[][] leftMatrix, double[][] rightMatrix) | double[][] | Completes standard matrix multiplication. Returns null if leftMatrix column count is not equal to the rightMatrix row count.
 multiplyScalar(double scalar, double[][] matrix) | double[][] | Multiplies each cell in matrix by scalar value and returns deep copy of result.
 multiplyPairwise(double[][] matrix1, double[][] matrix2) | double[][] | Multiplies each cell of matrix1 by the corresponding cell of matrix2 and returns deep copy of result. Returns null if matrix dimensions do not match.
