@@ -138,6 +138,14 @@ public class Matrices{
     return product;
   }
 
+  public static double sum(double[] vector) {
+    double sum = 0d;
+    for(int i = 0; i < vector.length; i++) {
+      sum += vector[i];
+    }
+    return sum;
+  }
+
   public static double[][] sum(int dimension, double[][] matrix) {
     double[][] sum;
     if(dimension == 0) {
