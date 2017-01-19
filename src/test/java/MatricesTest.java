@@ -79,4 +79,20 @@ public class MatricesTest{
     assertTrue(Matrices.equals(knownSum, sum));
   }
 
+  @Test
+  public void deepCopy_returnsDeepCopyOfMatrix_2DdoubleArray(){
+    double[][] matrix = new double[][] {{1,0,2}, {0,-4,0}, {1,100,-6}};
+    double[][] knownCopy = new double[][] {{1,0,2}, {0,-4,0}, {1,100,-6}};
+    double[][] testCopy = Matrices.deepCopy(matrix);
+    assertTrue(Matrices.equals(knownCopy, testCopy));
+  }
+
+  @Test
+  public void column_returnsSpecifiedColumnFromMatrixAsVector_doubleArray(){
+    double[][] matrix = new double[][] {{1,0,2}, {0,-4,0}, {1,100,-6}};
+    double[] knownColumn = new double[] {0,-4,100};
+    double[] testColumn = Matrices.column(1,matrix);
+    assertTrue(Matrices.equals(knownColumn, testColumn));
+  }
+
 }

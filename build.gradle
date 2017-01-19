@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-archivesBaseName = "matrices_library"
+archivesBaseName = "m"
 version = '1.0'
 mainClassName = "App"
 

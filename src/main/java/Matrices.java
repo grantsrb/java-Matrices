@@ -32,6 +32,19 @@ public class Matrices{
     }
   }
 
+  public static boolean equals(double[] vector1, double[] vector2) {
+    try{
+      for(int col = 0; col < vector1.length; col++) {
+        if(Math.abs(vector1[col] - vector2[col]) > 0.00001d){
+          return false;
+        }
+      }
+      return true;
+    } catch(IndexOutOfBoundsException e) {
+      return false;
+    }
+  }
+
   public static double[][] add(double[][] leftMatrix, double[][] rightMatrix) {
     double[][] sum = new double[leftMatrix.length][leftMatrix[0].length];
     try{
@@ -107,4 +120,29 @@ public class Matrices{
     return sum;
   }
 
+  // public static double[][] reducedRowForm(double[][] matrix) {
+  //   for(int col = 0; col < matrix[0].length; col++){
+  //     for(int row = 0; row < matrix.length; row++) {
+  //       double ratio = matrix[col][]
+  //     }
+  //   }
+  // }
+
+  public static double[][] deepCopy(double[][] matrix){
+    double[][] copy = new double[matrix.length][matrix[0].length];
+    for(int row = 0; row < matrix.length; row++) {
+      for(int col = 0; col < matrix.length; col++) {
+        copy[row][col] = matrix[row][col];
+      }
+    }
+    return copy;
+  }
+
+  public static double[] column(int col, double[][] matrix) {
+    double[] columnVector = new double[matrix.length];
+    for(int row = 0; row < matrix.length; row++) {
+      columnVector[row] = matrix[row][col];
+    }
+    return columnVector;
+  }
 }
