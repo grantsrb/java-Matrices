@@ -55,5 +55,7 @@ public class Matrices{
     return matrix;
   }
 
-  
+  public static double[][] multiplyPairwise(double[][] leftMatrix, double[][] rightMatrix) {
+    return null;
+  }
 }
