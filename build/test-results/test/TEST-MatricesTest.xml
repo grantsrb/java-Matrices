@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MatricesTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2017-01-19T21:27:23" hostname="Malachi.local" time="0.006">
+<testsuite name="MatricesTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2017-01-19T22:45:25" hostname="Malachi.local" time="0.011">
   <properties/>
-  <testcase name="sum_sumsAllElementsInSpecifiedDimension1_double" classname="MatricesTest" time="0.002"/>
+  <testcase name="add_standardVectorAddition_doubleArray" classname="MatricesTest" time="0.001"/>
+  <testcase name="equals_comparesNullForEqualityVectors_boolean" classname="MatricesTest" time="0.0"/>
+  <testcase name="sum_sumsAllElementsInSpecifiedDimension1_double" classname="MatricesTest" time="0.0"/>
   <testcase name="multiplyPairwise_multipliesMatricesElementByElement_2DdoubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="firstNonZeroIndex_returnsIndexOf1stNonZeroValueInVectorOnOrPastSpecifiedValue_int" classname="MatricesTest" time="0.0"/>
-  <testcase name="multiplyMatrix_standardMatrixMultiplication_2DdoubleArray" classname="MatricesTest" time="0.0"/>
+  <testcase name="multiply_standardMatrixMultiplication_2DdoubleArray" classname="MatricesTest" time="0.0"/>
+  <testcase name="multiply_standardMatrixMultiplication_null" classname="MatricesTest" time="0.001"/>
+  <testcase name="multiply_scalarMultiplicationAcrossVector_doubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="column_returnsSpecifiedColumnFromMatrixAsVector_doubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="add_standardMatrixAddition_2DdoubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="sum_sumsAllElementsInSpecifiedDimension2_double" classname="MatricesTest" time="0.0"/>
   <testcase name="equals_compares2DMatricesForEquality_boolean" classname="MatricesTest" time="0.0"/>
-  <testcase name="maxIndex_returnsIndexOfMaxValueInVector_int" classname="MatricesTest" time="0.001"/>
+  <testcase name="maxIndex_returnsIndexOfMaxValueInVector_int" classname="MatricesTest" time="0.0"/>
   <testcase name="equals_comparesVectorsForEquality_boolean" classname="MatricesTest" time="0.0"/>
-  <testcase name="sum_sumsAllElementsInSpecifiedDimension0_double" classname="MatricesTest" time="0.0"/>
-  <testcase name="deepCopy_returnsDeepCopyOfVector_doubleArray" classname="MatricesTest" time="0.0"/>
+  <testcase name="sum_sumsAllElementsInSpecifiedDimension0_double" classname="MatricesTest" time="0.001"/>
+  <testcase name="deepCopy_returnsDeepCopyOfVector_doubleArray" classname="MatricesTest" time="0.001"/>
+  <testcase name="multiplyPairwise_multipliesVectorsElementByElement_doubleArray" classname="MatricesTest" time="0.0"/>
+  <testcase name="add_scalarAdditionAcrossVector_doubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="deepCopy_returnsDeepCopyOfMatrix_2DdoubleArray" classname="MatricesTest" time="0.0"/>
-  <testcase name="multiplyScalar_scalarMultiplicationAcrossMatrix_2DdoubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="add_scalarAdditionAcrossMatrix_2DdoubleArray" classname="MatricesTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="equals_comparesNullForEquality_boolean" classname="MatricesTest" time="0.001"/>
+  <testcase name="multiply_scalarMultiplicationAcrossMatrix_2DdoubleArray" classname="MatricesTest" time="0.0"/>
+  <system-out><![CDATA[true
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
