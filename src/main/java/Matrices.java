@@ -139,6 +139,15 @@ public class Matrices{
     return index;
   }
 
+  public static int firstNonZeroIndex(int startPoint, double[] vector) {
+    for(int i = startPoint; i < vector.length; i++) {
+      if(vector[i] != 0) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   public static double[][] deepCopy(double[][] matrix){
     double[][] copy = new double[matrix.length][matrix[0].length];
     for(int row = 0; row < matrix.length; row++) {

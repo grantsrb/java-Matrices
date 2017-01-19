@@ -4,7 +4,7 @@
 
 ##Description
 
-This Matrices class was created to assist in matrix operations that are common to neural networks programming. All operations use double types. Please contact me if you would like any specific operations to be added to the class.
+This is a java Matrices project to assist in matrix operations that are common to neural networks programming. All operations use double types. Please contact me if you would like any specific operations to be added to the class.
 
 ##Static Methods
 
@@ -17,6 +17,7 @@ deepCopy(double[][] matrix) | double[][] | returns deep copy of matrix.
 deepCopy(double[] vector) | double[][] | returns deep copy of vector.
 equals(double[][] matrix1, double[][] matrix2) | boolean | Returns true if two matrices are deep copies of each other.
 equals(double[] vector1, double[] vector2) | boolean | Returns true if two vectors are deep copies of each other.
+firstNonZeroIndex(int startIndex, double[] vector) | int | Returns index of first non-zero value in vector on or past startIndex.
 maxIndex(double[] vector) | int | Returns the index of the first occurrence of the maximum value within the vector.
 multiplyMatrix(double[][] leftMatrix, double[][] rightMatrix) | double[][] | Completes standard matrix multiplication. Returns null if leftMatrix column count is not equal to the rightMatrix row count.
 multiplyScalar(double scalar, double[][] matrix) | double[][] | Multiplies each cell in matrix by scalar value and returns deep copy of result.

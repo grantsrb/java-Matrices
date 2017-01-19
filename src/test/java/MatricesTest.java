@@ -118,4 +118,13 @@ public class MatricesTest{
     assertEquals(knownIndex, testIndex);
   }
 
+  @Test
+  public void firstNonZeroIndex_returnsIndexOf1stNonZeroValueInVectorOnOrPastSpecifiedValue_int() {
+    double[] vector = new double[] {1,0,2,5};
+    int startIndex = 1;
+    int knownFirstNonZeroIndex = 2;
+    int testIndex = Matrices.firstNonZeroIndex(startIndex, vector);
+    assertEquals(knownFirstNonZeroIndex, testIndex);
+  }
+
 }
