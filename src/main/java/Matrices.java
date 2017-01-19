@@ -46,13 +46,24 @@ public class Matrices{
     }
   }
 
-  public static double[][] multiplyScalar(double scalar, double[][] matrix){
-    for(int row = 0; row < matrix.length; row++) {
-      for(int col = 0; col < matrix[0].length; col++) {
-        matrix[row][col] *= scalar;
+  public static double[][] add(double scalar, double[][] matrix) {
+    double[][] sum = new double[matrix.length][matrix[0].length];
+    for(int row = 0; row < sum.length; row++) {
+      for(int col = 0; col < sum[0].length; col++) {
+        sum[row][col] = scalar + matrix[row][col];
       }
     }
-    return matrix;
+    return sum;
+  }
+
+  public static double[][] multiplyScalar(double scalar, double[][] matrix){
+    double[][] product = new double[matrix.length][matrix[0].length];
+    for(int row = 0; row < matrix.length; row++) {
+      for(int col = 0; col < matrix[0].length; col++) {
+        product[row][col] = scalar * matrix[row][col];
+      }
+    }
+    return product;
   }
 
   public static double[][] multiplyPairwise(double[][] leftMatrix, double[][] rightMatrix) {

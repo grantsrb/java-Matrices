@@ -40,6 +40,15 @@ public class MatricesTest{
   }
 
   @Test
+  public void add_scalarAdditionAcrossMatrix_2DdoubleArray(){
+    double[][] testMatrix = new double[][] {{2,1,2}, {0,2,-1}, {2,2,3}};
+    double[][] knownSum = new double[][] {{7,6,7}, {5,7,4}, {7,7,8}};
+    double scalar = 5;
+    double [][] testSum = Matrices.add(scalar,testMatrix);
+    assertTrue(Matrices.equals(knownSum, testSum));
+  }
+
+  @Test
   public void multiplyScalar_scalarMultiplicationAcrossMatrix_2DdoubleArray(){
     double[][] testMatrix = new double[][] {{2,1,2}, {0,2,-1}, {2,2,3}};
     double[][] knownProduct = new double[][] {{10,5,10}, {0,10,-5}, {10,10,15}};
@@ -47,5 +56,8 @@ public class MatricesTest{
     double [][] testProduct = Matrices.multiplyScalar(scalar,testMatrix);
     assertTrue(Matrices.equals(knownProduct, testProduct));
   }
+
+  // @Test
+  // public void multiplyPairwise_
 
 }
