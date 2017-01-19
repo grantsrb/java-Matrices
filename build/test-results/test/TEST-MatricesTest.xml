@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MatricesTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2017-01-19T07:13:52" hostname="Malachi.local" time="0.004">
+  <properties/>
+  <testcase name="multiply_standardMatrixMultiplication_2DdoubleArray" classname="MatricesTest" time="0.002"/>
+  <testcase name="add_standardMatrixAddition_2DdoubleArray" classname="MatricesTest" time="0.0"/>
+  <testcase name="equals_compares2DMatricesForEquality_boolean" classname="MatricesTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
