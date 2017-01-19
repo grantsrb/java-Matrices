@@ -67,6 +67,16 @@ public class Matrices{
   }
 
   public static double[][] multiplyPairwise(double[][] leftMatrix, double[][] rightMatrix) {
-    return null;
+    double[][] product = new double[leftMatrix.length][leftMatrix[0].length];
+    try{
+      for(int row = 0; row < leftMatrix.length; row++){
+        for(int col = 0; col < leftMatrix[0].length; col++) {
+          product[row][col] = leftMatrix[row][col] * rightMatrix[row][col];
+        }
+      }
+      return product;
+    } catch(IndexOutOfBoundsException e) {
+      return null;
+    }
   }
 }

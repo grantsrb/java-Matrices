@@ -57,7 +57,13 @@ public class MatricesTest{
     assertTrue(Matrices.equals(knownProduct, testProduct));
   }
 
-  // @Test
-  // public void multiplyPairwise_
+  @Test
+  public void multiplyPairwise_multipliesMatricesElementByElement_2DdoubleArray(){
+    double[][] matrix1 = new double[][] {{1,0,1}, {0,-4,0}, {1,10,3}};
+    double[][] matrix2 = new double[][] {{1,1,2}, {0,1,-1}, {1,10,-2}};
+    double[][] knownProduct = new double[][] {{1,0,2}, {0,-4,0}, {1,100,-6}};
+    double[][] testProduct = Matrices.multiplyPairwise(matrix1, matrix2);
+    assertTrue(Matrices.equals(knownProduct, testProduct));
+  }
 
 }
