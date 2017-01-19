@@ -2,20 +2,6 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class MatricesTest{
-  double[][] leftMatrix;
-  double[][] rightMatrix;
-  double[][] knownProduct;
-
-  @Before
-  public void initialize(){
-    this.leftMatrix = new double[][] {{1,2,3},
-                                  {4,5,6},
-                                  {7,8,9}};
-    this.rightMatrix = new double[][] {{10,11,12,13,14},
-                                        {15,16,17,18,19},
-                                        {20,21,22,23,24}};
-    this.knownProduct = new double[][] {{100,106,112,118,124},{235,250,265,280,295},{370,394,418,442,466}};
-  }
 
   @Test
   public void equals_compares2DMatricesForEquality_boolean(){
@@ -26,8 +12,11 @@ public class MatricesTest{
 
   @Test
   public void multiplyMatrix_standardMatrixMultiplication_2DdoubleArray(){
-    double[][] testProduct = Matrices.multiplyMatrix(this.leftMatrix, this.rightMatrix);
-    assertTrue(Matrices.equals(this.knownProduct, testProduct));
+    double[][] leftMatrix = new double[][] {{1,2,3},{4,5,6},{7,8,9}};
+    double[][] rightMatrix = new double[][] {{10,11,12,13,14},{15,16,17,18,19},{20,21,22,23,24}};
+    double[][] knownProduct = new double[][] {{100,106,112,118,124},{235,250,265,280,295},{370,394,418,442,466}};
+    double[][] testProduct = Matrices.multiplyMatrix(leftMatrix, rightMatrix);
+    assertTrue(Matrices.equals(knownProduct, testProduct));
   }
 
   @Test
