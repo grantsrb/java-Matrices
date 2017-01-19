@@ -46,6 +46,11 @@ If you're starting a new project or want to tinker with the Matrices class code,
 
 Please report any bugs or issues you find to me at grantsrb@gmail.com. Also please let me know if there are any features you would like to have added.
 
+## Technologies Used
+* Java
+* Gradle
+* JUnit 4.+
+
 ### Legal
 
 Copyright (c) 2016 Satchel Grant
