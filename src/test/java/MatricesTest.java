@@ -66,4 +66,28 @@ public class MatricesTest{
     assertTrue(Matrices.equals(knownProduct, testProduct));
   }
 
+  @Test
+  public void sum_sumsAllElementsInSpecifiedDimension0_double(){
+    double[][] matrix = new double[][] {{1,0,2}, {0,-4,0}, {1,100,-6}};
+    double [][] knownSum = new double[][] {{94}};
+    double[][] sum = Matrices.sum(0, matrix);
+    assertTrue(Matrices.equals(knownSum, sum));
+  }
+
+  @Test
+  public void sum_sumsAllElementsInSpecifiedDimension1_double(){
+    double[][] matrix = new double[][] {{1,0,2}, {0,-4,0}, {1,100,-6}};
+    double [][] knownSum = new double[][] {{3},{-4},{95}};
+    double[][] sum = Matrices.sum(1, matrix);
+    assertTrue(Matrices.equals(knownSum, sum));
+  }
+
+  @Test
+  public void sum_sumsAllElementsInSpecifiedDimension2_double(){
+    double[][] matrix = new double[][] {{1,0,2}, {0,-4,0}, {1,100,-6}};
+    double [][] knownSum = new double[][] {{2,96,-4}};
+    double[][] sum = Matrices.sum(2, matrix);
+    assertTrue(Matrices.equals(knownSum, sum));
+  }
+
 }

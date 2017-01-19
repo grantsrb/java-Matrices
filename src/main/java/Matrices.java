@@ -79,4 +79,31 @@ public class Matrices{
       return null;
     }
   }
+
+  public static double[][] sum(int dimension, double[][] matrix) {
+    double[][] sum;
+    if(dimension == 0) {
+      sum = new double[1][1];
+      for(int row = 0; row < matrix.length; row++) {
+        for(int col = 0; col < matrix.length; col++) {
+          sum[0][0] += matrix[row][col];
+        }
+      }
+    } else if(dimension == 1) {
+      sum = new double[matrix.length][1];
+      for(int row = 0; row < matrix.length; row++) {
+        for(int col = 0; col < matrix.length; col++) {
+          sum[row][0] += matrix[row][col];
+        }
+      }
+    } else{
+      sum = new double[1][matrix[0].length];
+      for(int row = 0; row < matrix.length; row++) {
+        for(int col = 0; col < matrix.length; col++) {
+          sum[0][col] += matrix[row][col];
+        }
+      }
+    }
+    return sum;
+  }
 }
