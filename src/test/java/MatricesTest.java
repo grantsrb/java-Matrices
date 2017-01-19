@@ -11,6 +11,13 @@ public class MatricesTest{
   }
 
   @Test
+  public void equals_comparesVectorsForEquality_boolean(){
+    double[] vector1 = new double[] {1,0,1};
+    double[] vector2 = new double[] {1,0,1};
+    assertTrue(Matrices.equals(vector1, vector2));
+  }
+
+  @Test
   public void multiplyMatrix_standardMatrixMultiplication_2DdoubleArray(){
     double[][] leftMatrix = new double[][] {{1,2,3},{4,5,6},{7,8,9}};
     double[][] rightMatrix = new double[][] {{10,11,12,13,14},{15,16,17,18,19},{20,21,22,23,24}};
