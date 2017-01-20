@@ -173,27 +173,28 @@ public class Matrices{
     return sum;
   }
 
-  // public static double[][] reducedRowForm(double[][] matrix) {
-  //   double[][] reducedMatrix = Matrices.deepCopy(matrix);
-  //   int pivotLevel = 0;
-  //   for(int col = 0; col < reducedMatrix[0].length; col++){
-  //     if(col < reducedMatrix.length) {
-  //       int pivotIndex = Matrices.firstNonZeroIndex(Matrices.column(col, reducedMatrix));
-  //       if(pivotIndex > -1){
-  //         Matrices.swapRows(reducedMatrix,pivotLevel, pivotIndex);
-  //         for(int row = pivotLevel+1; row < reducedMatrix.length; row++) {
-  //           double ratio = reducedMatrix[col-skippedColumns][col]/reducedMatrix[row][col];
-  //           double[] reductionRow = Matrices.multiply(-ratio, reducedMatrix[col-skippedColumns][col]);
-  //           reducedMatrix[row] = Matrices.add(reductionRow, reducedMatrix[row]);
-  //         }
-  //         pivotLevel++;
-  //       }
-  //     } else {
-  //       break;
-  //     }
-  //   }
-  //   return reducedMatrix;
-  // }
+  public static double[][] reducedRowForm(double[][] matrix) {
+    double[][] reducedMatrix = Matrices.deepCopy(matrix);
+    int pivotLevel = 0;
+    for(int col = 0; col < reducedMatrix[0].length; col++){
+      if(col < reducedMatrix.length) {
+        int pivotIndex = Matrices.firstNonZeroIndex(Matrices.column(col, reducedMatrix), pivotLevel);
+        if(pivotIndex > -1){
+          Matrices.swapRows(reducedMatrix,pivotLevel, pivotIndex);
+          reducedMatrix[pivotLevel] = Matrices.multiply(1.0d/reducedMatrix[pivotLevel][col], reducedMatrix[pivotLevel]); // normalize row
+          for(int row = pivotLevel+1; row < reducedMatrix.length; row++) {
+            double ratio = reducedMatrix[row][col]/reducedMatrix[pivotLevel][col];
+            double[] reductionRow = Matrices.multiply(-ratio, reducedMatrix[pivotLevel]);
+            reducedMatrix[row] = Matrices.add(reductionRow, reducedMatrix[row]);
+          }
+          pivotLevel++;
+        }
+      } else {
+        break;
+      }
+    }
+    return reducedMatrix;
+  }
 
   public static void swapRows(double[][] matrix, int row1, int row2) {
     double[] temp = matrix[row1];
@@ -211,7 +212,16 @@ public class Matrices{
     return index;
   }
 
-  public static int firstNonZeroIndex(int startPoint, double[] vector) {
+  public static int firstNonZeroIndex(double[] vector) {
+    for(int i = 0; i < vector.length; i++) {
+      if(vector[i] != 0) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  public static int firstNonZeroIndex(double[] vector, int startPoint) {
     for(int i = startPoint; i < vector.length; i++) {
       if(vector[i] != 0) {
         return i;
@@ -254,5 +264,17 @@ public class Matrices{
       }
     }
     return transpose;
+  }
+
+  public static void printMatrix(double[][] matrix) {
+    for(int row = 0; row < matrix.length; row++){
+      for(int col = 0; col < matrix[0].length; col++) {
+        if(col < matrix[0].length-1){
+          System.out.print(matrix[row][col] + " ");
+        } else {
+          System.out.println(matrix[row][col]);
+        }
+      }
+    }
   }
 }

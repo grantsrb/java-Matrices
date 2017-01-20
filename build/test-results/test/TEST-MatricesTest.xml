@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MatricesTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2017-01-20T02:02:01" hostname="Malachi.local" time="0.017">
+<testsuite name="MatricesTest" tests="30" skipped="0" failures="0" errors="0" timestamp="2017-01-20T02:50:27" hostname="Malachi.local" time="0.013">
   <properties/>
-  <testcase name="add_standardVectorAddition_doubleArray" classname="MatricesTest" time="0.002"/>
+  <testcase name="add_standardVectorAddition_doubleArray" classname="MatricesTest" time="0.001"/>
   <testcase name="equals_comparesNullForEqualityVectors_boolean" classname="MatricesTest" time="0.0"/>
   <testcase name="sum_sumsAllElementsInSpecifiedDimension1_double" classname="MatricesTest" time="0.0"/>
   <testcase name="multiplyPairwise_multipliesMatricesElementByElement_2DdoubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="firstNonZeroIndex_returnsIndexOf1stNonZeroValueInVectorOnOrPastSpecifiedValue_int" classname="MatricesTest" time="0.0"/>
   <testcase name="multiply_standardMatrixMultiplication_2DdoubleArray" classname="MatricesTest" time="0.0"/>
-  <testcase name="multiply_standardMatrixMultiplication_null" classname="MatricesTest" time="0.004"/>
+  <testcase name="multiply_standardMatrixMultiplication_null" classname="MatricesTest" time="0.0"/>
+  <testcase name="swapRows_swapsSameRowInMatrix_void" classname="MatricesTest" time="0.0"/>
   <testcase name="multiply_scalarMultiplicationAcrossVector_doubleArray" classname="MatricesTest" time="0.0"/>
+  <testcase name="reducedRowForm_returnsReducedRowFormOfWideMatrix_2DdoubleArray" classname="MatricesTest" time="0.0"/>
+  <testcase name="reducedRowForm_returnsReducedRowFormOfMatrixOfPartialNums_2DdoubleArray" classname="MatricesTest" time="0.001"/>
   <testcase name="column_returnsSpecifiedColumnFromMatrixAsVector_doubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="add_standardMatrixAddition_2DdoubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="swapRows_swapsSpecifiedRowsInMatrix_void" classname="MatricesTest" time="0.0"/>
   <testcase name="sum_sumsAllElementsInSpecifiedDimension2_double" classname="MatricesTest" time="0.0"/>
   <testcase name="equals_compares2DMatricesForEquality_boolean" classname="MatricesTest" time="0.0"/>
-  <testcase name="maxIndex_returnsIndexOfMaxValueInVector_int" classname="MatricesTest" time="0.001"/>
+  <testcase name="maxIndex_returnsIndexOfMaxValueInVector_int" classname="MatricesTest" time="0.0"/>
   <testcase name="equals_comparesVectorsForEquality_boolean" classname="MatricesTest" time="0.0"/>
   <testcase name="transpose_returnsTransposeOfMatrix_2DdoubleArray" classname="MatricesTest" time="0.0"/>
+  <testcase name="reducedRowForm_returnsReducedRowFormOfTallMatrix_2DdoubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="sum_sumsAllElementsInSpecifiedDimension0_double" classname="MatricesTest" time="0.0"/>
-  <testcase name="deepCopy_returnsDeepCopyOfVector_doubleArray" classname="MatricesTest" time="0.001"/>
+  <testcase name="deepCopy_returnsDeepCopyOfVector_doubleArray" classname="MatricesTest" time="0.0"/>
+  <testcase name="reducedRowForm_returnsReducedRowFormOfMatrixOf1s_2DdoubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="multiplyPairwise_multipliesVectorsElementByElement_doubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="add_scalarAdditionAcrossVector_doubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="deepCopy_returnsDeepCopyOfMatrix_2DdoubleArray" classname="MatricesTest" time="0.0"/>
+  <testcase name="reducedRowForm_returnsReducedRowFormOfWholeVals_2DdoubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="add_scalarAdditionAcrossMatrix_2DdoubleArray" classname="MatricesTest" time="0.0"/>
   <testcase name="equals_comparesNullForEquality_boolean" classname="MatricesTest" time="0.0"/>
   <testcase name="multiply_scalarMultiplicationAcrossMatrix_2DdoubleArray" classname="MatricesTest" time="0.0"/>
-  <system-out><![CDATA[true
-]]></system-out>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

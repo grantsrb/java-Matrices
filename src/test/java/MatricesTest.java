@@ -46,7 +46,6 @@ public class MatricesTest{
     double[][] rightMatrix = new double[][] {{10,11,12,13,14},{15,16,17,18,19},{20,21,22,23,24},{25,26,27,28,29}};
     double[][] knownProduct = null;
     double[][] testProduct = Matrices.multiply(leftMatrix, rightMatrix);
-    System.out.println(testProduct == null);
     assertTrue(Matrices.equals(knownProduct, testProduct));
   }
 
@@ -183,7 +182,7 @@ public class MatricesTest{
     double[] vector = new double[] {1,0,2,5};
     int startIndex = 1;
     int knownFirstNonZeroIndex = 2;
-    int testIndex = Matrices.firstNonZeroIndex(startIndex, vector);
+    int testIndex = Matrices.firstNonZeroIndex(vector, startIndex);
     assertEquals(knownFirstNonZeroIndex, testIndex);
   }
 
@@ -196,11 +195,59 @@ public class MatricesTest{
   }
 
   @Test
+  public void swapRows_swapsSameRowInMatrix_void() {
+    double[][] matrix = {{1,2,3,4},{5,6,7,8}};
+    double[][] knownAns = {{1,2,3,4},{5,6,7,8}};
+    Matrices.swapRows(matrix, 0,0);
+    assertTrue(Matrices.equals(matrix, knownAns));
+  }
+
+  @Test
   public void transpose_returnsTransposeOfMatrix_2DdoubleArray() {
     double[][] matrix = {{1,2,3,4},{5,6,7,8}};
     double[][] knownTranspose = {{1,5},{2,6},{3,7},{4,8}};
     double[][] testTranspose = Matrices.transpose(matrix);
     assertTrue(Matrices.equals(knownTranspose, testTranspose));
+  }
+
+  @Test
+  public void reducedRowForm_returnsReducedRowFormOfMatrixOf1s_2DdoubleArray(){
+    double[][] matrix = {{1,1,1},{1,1,1},{1,1,1}};
+    double[][] knownResult = {{1,1,1},{0,0,0},{0,0,0}};
+    double[][] testResult = Matrices.reducedRowForm(matrix);
+    assertTrue(Matrices.equals(knownResult, testResult));
+  }
+
+  @Test
+  public void reducedRowForm_returnsReducedRowFormOfWholeVals_2DdoubleArray(){
+    double[][] matrix = {{1,1,1},{1,2,2},{2,2,3}};
+    double[][] knownResult = {{1,1,1},{0,1,1},{0,0,1}};
+    double[][] testResult = Matrices.reducedRowForm(matrix);
+    assertTrue(Matrices.equals(knownResult, testResult));
+  }
+
+  @Test
+  public void reducedRowForm_returnsReducedRowFormOfMatrixOfPartialNums_2DdoubleArray(){
+    double[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
+    double[][] knownResult = {{1,2,3},{0,1,2},{0,0,0}};
+    double[][] testResult = Matrices.reducedRowForm(matrix);
+    assertTrue(Matrices.equals(knownResult, testResult));
+  }
+
+  @Test
+  public void reducedRowForm_returnsReducedRowFormOfTallMatrix_2DdoubleArray(){
+    double[][] matrix = {{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
+    double[][] knownResult = {{1,2,3},{0,1,2},{0,0,0},{0,0,0}};
+    double[][] testResult = Matrices.reducedRowForm(matrix);
+    assertTrue(Matrices.equals(knownResult, testResult));
+  }
+
+  @Test
+  public void reducedRowForm_returnsReducedRowFormOfWideMatrix_2DdoubleArray(){
+    double[][] matrix = {{1,2,3,13},{4,5,6,14},{7,8,9,15}};
+    double[][] knownResult = {{1,2,3,13},{0,1,2,-38.0/-3.0},{0,0,0,0}};
+    double[][] testResult = Matrices.reducedRowForm(matrix);
+    assertTrue(Matrices.equals(knownResult, testResult));
   }
 
 }
