@@ -187,6 +187,15 @@ public class MatricesTest{
   }
 
   @Test
+  public void firstNonZeroIndex_reverseOfFirstNonZeroIndexFxn_int() {
+    double[] vector = new double[] {1,0,2,0,0};
+    int startIndex = 3;
+    int knownFirstNonZeroIndex = 2;
+    int testIndex = Matrices.firstNonZeroIndex(vector, startIndex, true);
+    assertEquals(knownFirstNonZeroIndex, testIndex);
+  }
+
+  @Test
   public void swapRows_swapsSpecifiedRowsInMatrix_void() {
     double[][] matrix = {{1,2,3,4},{5,6,7,8}};
     double[][] knownAns = {{5,6,7,8},{1,2,3,4}};

@@ -196,6 +196,13 @@ public class Matrices{
     return reducedMatrix;
   }
 
+  // public static double[][] rref(double[][] matrix) {
+  //   double reducedMatrix = Matrices.reducedRowForm(matrix);
+  //   for(int col = reducedMatrix[0].length-1; col >=0; col--){
+  //
+  //   }
+  // }
+
   public static void swapRows(double[][] matrix, int row1, int row2) {
     double[] temp = matrix[row1];
     matrix[row1] = matrix[row2];
@@ -225,6 +232,24 @@ public class Matrices{
     for(int i = startPoint; i < vector.length; i++) {
       if(vector[i] != 0) {
         return i;
+      }
+    }
+    return -1;
+  }
+
+  public static int firstNonZeroIndex(double[] vector, int startPoint, boolean reversed) {
+    startPoint = startPoint >= vector.length ? vector.length-1 : startPoint;
+    if(reversed){
+      for(int i = startPoint; i >= 0; i--) {
+        if(vector[i] != 0) {
+          return i;
+        }
+      }
+    } else {
+      for(int i = startPoint; i < vector.length; i++) {
+        if(vector[i] != 0) {
+          return i;
+        }
       }
     }
     return -1;
