@@ -174,20 +174,19 @@ public class Matrices{
   }
 
   // public static double[][] reducedRowForm(double[][] matrix) {
-  //   int skippedColumns = 0;
   //   double[][] reducedMatrix = Matrices.deepCopy(matrix);
+  //   int pivotLevel = 0;
   //   for(int col = 0; col < reducedMatrix[0].length; col++){
   //     if(col < reducedMatrix.length) {
   //       int pivotIndex = Matrices.firstNonZeroIndex(Matrices.column(col, reducedMatrix));
   //       if(pivotIndex > -1){
-  //         reducedMatrix = Matrices.swapRows(col-skippedColumns, pivotIndex, reducedMatrix);
-  //         for(int row = col-skippedColumns+1; row < reducedMatrix.length; row++) {
+  //         Matrices.swapRows(reducedMatrix,pivotLevel, pivotIndex);
+  //         for(int row = pivotLevel+1; row < reducedMatrix.length; row++) {
   //           double ratio = reducedMatrix[col-skippedColumns][col]/reducedMatrix[row][col];
   //           double[] reductionRow = Matrices.multiply(-ratio, reducedMatrix[col-skippedColumns][col]);
   //           reducedMatrix[row] = Matrices.add(reductionRow, reducedMatrix[row]);
   //         }
-  //       } else {
-  //         skippedColumns++;
+  //         pivotLevel++;
   //       }
   //     } else {
   //       break;
@@ -195,6 +194,12 @@ public class Matrices{
   //   }
   //   return reducedMatrix;
   // }
+
+  public static void swapRows(double[][] matrix, int row1, int row2) {
+    double[] temp = matrix[row1];
+    matrix[row1] = matrix[row2];
+    matrix[row2] = temp;
+  }
 
   public static int maxIndex(double[] vector){
     int index = 0;

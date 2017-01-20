@@ -188,6 +188,14 @@ public class MatricesTest{
   }
 
   @Test
+  public void swapRows_swapsSpecifiedRowsInMatrix_void() {
+    double[][] matrix = {{1,2,3,4},{5,6,7,8}};
+    double[][] knownAns = {{5,6,7,8},{1,2,3,4}};
+    Matrices.swapRows(matrix, 0,1);
+    assertTrue(Matrices.equals(matrix, knownAns));
+  }
+
+  @Test
   public void transpose_returnsTransposeOfMatrix_2DdoubleArray() {
     double[][] matrix = {{1,2,3,4},{5,6,7,8}};
     double[][] knownTranspose = {{1,5},{2,6},{3,7},{4,8}};
