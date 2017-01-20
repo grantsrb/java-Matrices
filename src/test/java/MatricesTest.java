@@ -187,4 +187,12 @@ public class MatricesTest{
     assertEquals(knownFirstNonZeroIndex, testIndex);
   }
 
+  @Test
+  public void transpose_returnsTransposeOfMatrix_2DdoubleArray() {
+    double[][] matrix = {{1,2,3,4},{5,6,7,8}};
+    double[][] knownTranspose = {{1,5},{2,6},{3,7},{4,8}};
+    double[][] testTranspose = Matrices.transpose(matrix);
+    assertTrue(Matrices.equals(knownTranspose, testTranspose));
+  }
+
 }
