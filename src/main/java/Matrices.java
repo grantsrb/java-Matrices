@@ -196,12 +196,20 @@ public class Matrices{
     return reducedMatrix;
   }
 
-  // public static double[][] rref(double[][] matrix) {
-  //   double reducedMatrix = Matrices.reducedRowForm(matrix);
-  //   for(int col = reducedMatrix[0].length-1; col >=0; col--){
-  //
-  //   }
-  // }
+  public static double[][] rref(double[][] matrix) {
+    double[][] reducedMatrix = Matrices.reducedRowForm(matrix);
+    for(int col = reducedMatrix[0].length-1; col >=0; col--){
+      int pivotLevel = Matrices.firstNonZeroIndex(Matrices.column(col, reducedMatrix), reducedMatrix.length, true);
+      if(pivotLevel > -1) {
+        for(int row = pivotLevel-1; row >= 0; row--) {
+          double ratio = reducedMatrix[row][col]/reducedMatrix[pivotLevel][col];
+          double[] reductionRow = Matrices.multiply(-ratio, reducedMatrix[pivotLevel]);
+          reducedMatrix[row] = Matrices.add(reductionRow, reducedMatrix[row]);
+        }
+      }
+    }
+    return reducedMatrix;
+  }
 
   public static void swapRows(double[][] matrix, int row1, int row2) {
     double[] temp = matrix[row1];

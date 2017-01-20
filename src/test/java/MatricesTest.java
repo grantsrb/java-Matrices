@@ -259,4 +259,45 @@ public class MatricesTest{
     assertTrue(Matrices.equals(knownResult, testResult));
   }
 
+  @Test
+  public void rref_returnsReducedRowEchelonFormOfMatrixOf1s_2DdoubleArray(){
+    double[][] matrix = {{1,1,1},{1,1,1},{1,1,1}};
+    double[][] knownResult = {{1,1,1},{0,0,0},{0,0,0}};
+    double[][] testResult = Matrices.rref(matrix);
+    assertTrue(Matrices.equals(knownResult, testResult));
+  }
+
+  @Test
+  public void rref_returnsReducedRowEchelonFormOfWholeVals_2DdoubleArray(){
+    double[][] matrix = {{1,1,1},{1,2,2},{2,2,3}};
+    double[][] knownResult = {{1,0,0},{0,1,0},{0,0,1}};
+    double[][] testResult = Matrices.rref(matrix);
+    assertTrue(Matrices.equals(knownResult, testResult));
+  }
+
+  @Test
+  public void rref_returnsReducedRowEchelonFormOfMatrixOfPartialNums_2DdoubleArray(){
+    double[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
+    double[][] knownResult = {{1,0,-1},{0,1,2},{0,0,0}};
+    double[][] testResult = Matrices.rref(matrix);
+    assertTrue(Matrices.equals(knownResult, testResult));
+  }
+
+  @Test
+  public void rref_returnsReducedRowEchelonFormOfTallMatrix_2DdoubleArray(){
+    double[][] matrix = {{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
+    double[][] knownResult = {{1,0,-1},{0,1,2},{0,0,0},{0,0,0}};
+    double[][] testResult = Matrices.rref(matrix);
+    assertTrue(Matrices.equals(knownResult, testResult));
+  }
+
+  @Test
+  public void rref_returnsReducedRowEchelonFormOfWideMatrix_2DdoubleArray(){
+    double[][] matrix = {{1,2,3,13},{4,5,6,14},{7,8,9,15}};
+    double[][] knownResult = {{1,0,-1,-37.0/3.0},{0,1,2,38.0/3.0},{0,0,0,0}};
+    double[][] testResult = Matrices.rref(matrix);
+    Matrices.printMatrix(testResult);
+    assertTrue(Matrices.equals(knownResult, testResult));
+  }
+
 }
